@@ -1,0 +1,69 @@
+{
+  "document": "RocketMSL — Blog Publishing Schedule",
+  "subtitle": "Quantifying Scientific Impact",
+  "summary": "Nine new articles, one per working day. Each article goes live automatically at 5:00 PM Pakistan time (12:00 UTC) on the date shown — one per weekday, weekends skipped.",
+  "prepared": "23 September 2026",
+  "source": "rocketmsl.com",
+  "schedule": [
+    {
+      "date": "Thu, 24 Sep 2026",
+      "time": "5:00 PM PKT",
+      "title": "What counts as a medical insight, and what does not",
+      "url": "https://rocketmsl.com/resources/what-is-a-medical-insight"
+    },
+    {
+      "date": "Fri, 25 Sep 2026",
+      "time": "5:00 PM PKT",
+      "title": "Talking-point coverage: measuring what was actually discussed",
+      "url": "https://rocketmsl.com/resources/talking-point-coverage"
+    },
+    {
+      "date": "Mon, 28 Sep 2026",
+      "time": "5:00 PM PKT",
+      "title": "Insight yield: measuring what came back from the conversation",
+      "url": "https://rocketmsl.com/resources/insight-yield"
+    },
+    {
+      "date": "Tue, 29 Sep 2026",
+      "time": "5:00 PM PKT",
+      "title": "Product knowledge and topic knowledge: why one score per HCP is not enough",
+      "url": "https://rocketmsl.com/resources/product-vs-topic-knowledge"
+    },
+    {
+      "date": "Wed, 30 Sep 2026",
+      "time": "5:00 PM PKT",
+      "title": "Why medical insights die in free-text fields",
+      "url": "https://rocketmsl.com/resources/structured-vs-freetext-insights"
+    },
+    {
+      "date": "Thu, 1 Oct 2026",
+      "time": "5:00 PM PKT",
+      "title": "Preparing for a scientific interaction",
+      "url": "https://rocketmsl.com/resources/msl-meeting-preparation"
+    },
+    {
+      "date": "Fri, 2 Oct 2026",
+      "time": "5:00 PM PKT",
+      "title": "Building the business case for Medical Affairs technology",
+      "url": "https://rocketmsl.com/resources/medical-affairs-technology-business-case"
+    },
+    {
+      "date": "Mon, 5 Oct 2026",
+      "time": "5:00 PM PKT",
+      "title": "KOL, HCP, and why the difference matters",
+      "url": "https://rocketmsl.com/resources/kol-vs-hcp"
+    },
+    {
+      "date": "Tue, 6 Oct 2026",
+      "time": "5:00 PM PKT",
+      "title": "Recording consent in MSL and HCP scientific meetings",
+      "url": "https://rocketmsl.com/resources/recording-consent-msl-hcp"
+    }
+  ],
+  "notes": [
+    "All times are 5:00 PM Pakistan Standard Time (PKT), which is 12:00 noon UTC — the same slot every day.",
+    "Only working days are used. Saturdays and Sundays are skipped.",
+    "Publishing is automatic. If a day is missed for any reason, the next run catches up.",
+    "Each article appears at its own web address (shown above) and on the Resources page at rocketmsl.com/resources."
+  ]
+}

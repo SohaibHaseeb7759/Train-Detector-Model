@@ -1,0 +1,707 @@
+[
+  {
+    "page": 1,
+    "items": [
+      {
+        "text": "ROCKETMSL",
+        "score": 0.9999847412109375,
+        "box": [
+          540.0,
+          42.0,
+          751.0,
+          76.0
+        ]
+      },
+      {
+        "text": "Quantifying Scientific Impact",
+        "score": 0.9999828934669495,
+        "box": [
+          541.0,
+          73.0,
+          751.0,
+          95.0
+        ]
+      },
+      {
+        "text": "BLOG PUBLISHING SCHEDULE",
+        "score": 0.9599981307983398,
+        "box": [
+          75.0,
+          161.0,
+          358.0,
+          193.0
+        ]
+      },
+      {
+        "text": "Nine new articles, one per working day",
+        "score": 0.9988144040107727,
+        "box": [
+          75.0,
+          200.0,
+          869.0,
+          250.0
+        ]
+      },
+      {
+        "text": "Each article goes live automatically at 5:00 PM Pakistan time (12:00 UTC) on the date shown — one",
+        "score": 0.9962360858917236,
+        "box": [
+          76.0,
+          257.0,
+          1101.0,
+          289.0
+        ]
+      },
+      {
+        "text": "per weekday, weekends skipped. No one needs to press publish; the website releases them on schedule.",
+        "score": 0.9993441104888916,
+        "box": [
+          76.0,
+          287.0,
+          1126.0,
+          323.0
+        ]
+      },
+      {
+        "text": "Date",
+        "score": 0.9999984502792358,
+        "box": [
+          95.0,
+          359.0,
+          154.0,
+          390.0
+        ]
+      },
+      {
+        "text": "Time",
+        "score": 0.9999974966049194,
+        "box": [
+          287.0,
+          359.0,
+          349.0,
+          390.0
+        ]
+      },
+      {
+        "text": "Article going live",
+        "score": 0.9999935626983643,
+        "box": [
+          446.0,
+          358.0,
+          618.0,
+          386.0
+        ]
+      },
+      {
+        "text": "Thu, 24 Sep",
+        "score": 0.9744131565093994,
+        "box": [
+          94.0,
+          418.0,
+          226.0,
+          453.0
+        ]
+      },
+      {
+        "text": "5:00 PM",
+        "score": 0.9998222589492798,
+        "box": [
+          288.0,
+          421.0,
+          374.0,
+          450.0
+        ]
+      },
+      {
+        "text": "What counts as a medical insight, and what does not",
+        "score": 0.992556631565094,
+        "box": [
+          447.0,
+          423.0,
+          991.0,
+          447.0
+        ]
+      },
+      {
+        "text": "2026",
+        "score": 0.9999986886978149,
+        "box": [
+          93.0,
+          445.0,
+          157.0,
+          479.0
+        ]
+      },
+      {
+        "text": "PKT",
+        "score": 0.9999889731407166,
+        "box": [
+          282.0,
+          442.0,
+          341.0,
+          480.0
+        ]
+      },
+      {
+        "text": "https://rocketmsl.com/resources/what-is-a-medical-insight",
+        "score": 0.9999412298202515,
+        "box": [
+          447.0,
+          449.0,
+          888.0,
+          472.0
+        ]
+      },
+      {
+        "text": "Fri, 25 Sep",
+        "score": 0.999969482421875,
+        "box": [
+          92.0,
+          506.0,
+          215.0,
+          543.0
+        ]
+      },
+      {
+        "text": "5:00 PM",
+        "score": 0.9998188018798828,
+        "box": [
+          286.0,
+          509.0,
+          376.0,
+          541.0
+        ]
+      },
+      {
+        "text": "Talking-point coverage: measuring what was actually discussed",
+        "score": 0.999987781047821,
+        "box": [
+          446.0,
+          510.0,
+          1112.0,
+          539.0
+        ]
+      },
+      {
+        "text": "2026",
+        "score": 0.9999929666519165,
+        "box": [
+          92.0,
+          535.0,
+          157.0,
+          570.0
+        ]
+      },
+      {
+        "text": "PKT",
+        "score": 0.9999849200248718,
+        "box": [
+          283.0,
+          534.0,
+          340.0,
+          568.0
+        ]
+      },
+      {
+        "text": "https://rocketmsl.com/resources/talking-point-coverage",
+        "score": 0.9962871074676514,
+        "box": [
+          446.0,
+          539.0,
+          867.0,
+          564.0
+        ]
+      },
+      {
+        "text": "Mon, 28 Sep",
+        "score": 0.9991478323936462,
+        "box": [
+          94.0,
+          598.0,
+          231.0,
+          637.0
+        ]
+      },
+      {
+        "text": "5:00 PM",
+        "score": 0.9959008097648621,
+        "box": [
+          286.0,
+          601.0,
+          375.0,
+          632.0
+        ]
+      },
+      {
+        "text": "Insight yield: measuring what came back from the conversation",
+        "score": 0.9971444010734558,
+        "box": [
+          445.0,
+          602.0,
+          1109.0,
+          632.0
+        ]
+      },
+      {
+        "text": "2026",
+        "score": 0.9999989867210388,
+        "box": [
+          91.0,
+          626.0,
+          156.0,
+          663.0
+        ]
+      },
+      {
+        "text": "PKT",
+        "score": 0.999993622303009,
+        "box": [
+          283.0,
+          627.0,
+          340.0,
+          661.0
+        ]
+      },
+      {
+        "text": "https://rocketmsl.com/resources/insight-yield",
+        "score": 0.9977661967277527,
+        "box": [
+          445.0,
+          630.0,
+          792.0,
+          655.0
+        ]
+      },
+      {
+        "text": "Product knowledge and topic knowledge: why one score per",
+        "score": 0.9999944567680359,
+        "box": [
+          445.0,
+          694.0,
+          1079.0,
+          721.0
+        ]
+      },
+      {
+        "text": "Tue, 29 Sep",
+        "score": 0.9971743226051331,
+        "box": [
+          92.0,
+          704.0,
+          224.0,
+          739.0
+        ]
+      },
+      {
+        "text": "5:00 PM",
+        "score": 0.9998561143875122,
+        "box": [
+          285.0,
+          706.0,
+          373.0,
+          738.0
+        ]
+      },
+      {
+        "text": "HCP is not enough",
+        "score": 0.9999831914901733,
+        "box": [
+          444.0,
+          721.0,
+          644.0,
+          750.0
+        ]
+      },
+      {
+        "text": "2026",
+        "score": 0.9999885559082031,
+        "box": [
+          91.0,
+          731.0,
+          155.0,
+          766.0
+        ]
+      },
+      {
+        "text": "PKT",
+        "score": 0.9999914169311523,
+        "box": [
+          282.0,
+          732.0,
+          339.0,
+          766.0
+        ]
+      },
+      {
+        "text": "https://rocketmsl.com/resources/product-vs-topic-knowledge",
+        "score": 0.9998915195465088,
+        "box": [
+          444.0,
+          750.0,
+          911.0,
+          774.0
+        ]
+      },
+      {
+        "text": "Wed, 30 Sep",
+        "score": 0.9998643398284912,
+        "box": [
+          91.0,
+          809.0,
+          229.0,
+          843.0
+        ]
+      },
+      {
+        "text": "5:00 PM",
+        "score": 0.9998659491539001,
+        "box": [
+          284.0,
+          812.0,
+          371.0,
+          841.0
+        ]
+      },
+      {
+        "text": "Why medical insights die in free-text fields",
+        "score": 0.9875221252441406,
+        "box": [
+          446.0,
+          815.0,
+          889.0,
+          839.0
+        ]
+      },
+      {
+        "text": "2026",
+        "score": 0.9999982714653015,
+        "box": [
+          91.0,
+          838.0,
+          155.0,
+          872.0
+        ]
+      },
+      {
+        "text": "PKT",
+        "score": 0.9999954104423523,
+        "box": [
+          282.0,
+          838.0,
+          337.0,
+          869.0
+        ]
+      },
+      {
+        "text": "https://rocketmsl.com/resources/structured-vs-freetext-insights",
+        "score": 0.9999342560768127,
+        "box": [
+          444.0,
+          842.0,
+          931.0,
+          865.0
+        ]
+      },
+      {
+        "text": "Thu, 1 Oct",
+        "score": 0.9982870221138,
+        "box": [
+          90.0,
+          898.0,
+          209.0,
+          936.0
+        ]
+      },
+      {
+        "text": "5:00 PM",
+        "score": 0.9962196350097656,
+        "box": [
+          283.0,
+          904.0,
+          373.0,
+          935.0
+        ]
+      },
+      {
+        "text": "Preparing for a scientific interaction",
+        "score": 0.9996797442436218,
+        "box": [
+          444.0,
+          907.0,
+          825.0,
+          935.0
+        ]
+      },
+      {
+        "text": "2026",
+        "score": 0.9999842643737793,
+        "box": [
+          90.0,
+          927.0,
+          154.0,
+          962.0
+        ]
+      },
+      {
+        "text": "PKT",
+        "score": 0.9999828338623047,
+        "box": [
+          280.0,
+          928.0,
+          337.0,
+          962.0
+        ]
+      },
+      {
+        "text": "https://rocketmsl.com/resources/msl-meeting-preparation",
+        "score": 0.999947190284729,
+        "box": [
+          445.0,
+          936.0,
+          892.0,
+          959.0
+        ]
+      },
+      {
+        "text": "Fri, 2 Oct 2026",
+        "score": 0.979107141494751,
+        "box": [
+          91.0,
+          1003.0,
+          248.0,
+          1036.0
+        ]
+      },
+      {
+        "text": "5:00 PM",
+        "score": 0.9998539686203003,
+        "box": [
+          284.0,
+          994.0,
+          371.0,
+          1023.0
+        ]
+      },
+      {
+        "text": "Building the business case for Medical Affairs technology",
+        "score": 0.9980966448783875,
+        "box": [
+          445.0,
+          997.0,
+          1057.0,
+          1026.0
+        ]
+      },
+      {
+        "text": "PKT",
+        "score": 0.999992311000824,
+        "box": [
+          281.0,
+          1018.0,
+          338.0,
+          1052.0
+        ]
+      },
+      {
+        "text": "https://rocketmsl.com/resources/medical-affairs-technology-business-case",
+        "score": 0.9999718070030212,
+        "box": [
+          445.0,
+          1027.0,
+          1031.0,
+          1050.0
+        ]
+      },
+      {
+        "text": "Mon, 5 Oct",
+        "score": 0.9993880987167358,
+        "box": [
+          91.0,
+          1080.0,
+          213.0,
+          1112.0
+        ]
+      },
+      {
+        "text": "5:00 PM",
+        "score": 0.999846339225769,
+        "box": [
+          284.0,
+          1084.0,
+          373.0,
+          1116.0
+        ]
+      },
+      {
+        "text": "KOL, HCP, and why the difference matters",
+        "score": 0.9999805688858032,
+        "box": [
+          445.0,
+          1089.0,
+          891.0,
+          1119.0
+        ]
+      },
+      {
+        "text": "2026",
+        "score": 0.9999949932098389,
+        "box": [
+          88.0,
+          1108.0,
+          153.0,
+          1143.0
+        ]
+      },
+      {
+        "text": "PKT",
+        "score": 0.9999902248382568,
+        "box": [
+          281.0,
+          1110.0,
+          339.0,
+          1144.0
+        ]
+      },
+      {
+        "text": "https://rocketmsl.com/resources/kol-vs-hcp",
+        "score": 0.9999030828475952,
+        "box": [
+          445.0,
+          1117.0,
+          784.0,
+          1144.0
+        ]
+      },
+      {
+        "text": "Tue, 6 Oct",
+        "score": 0.9996365308761597,
+        "box": [
+          89.0,
+          1171.0,
+          208.0,
+          1210.0
+        ]
+      },
+      {
+        "text": "5:00 PM",
+        "score": 0.9568792581558228,
+        "box": [
+          284.0,
+          1179.0,
+          373.0,
+          1210.0
+        ]
+      },
+      {
+        "text": "Recording consent in MSL and HCP scientific meetings",
+        "score": 0.9989646077156067,
+        "box": [
+          444.0,
+          1183.0,
+          1035.0,
+          1213.0
+        ]
+      },
+      {
+        "text": "2026",
+        "score": 0.9999987483024597,
+        "box": [
+          90.0,
+          1201.0,
+          154.0,
+          1236.0
+        ]
+      },
+      {
+        "text": "PKT",
+        "score": 0.9999933242797852,
+        "box": [
+          281.0,
+          1204.0,
+          339.0,
+          1238.0
+        ]
+      },
+      {
+        "text": "https://rocketmsl.com/resources/recording-consent-msl-hcp",
+        "score": 0.9999530911445618,
+        "box": [
+          444.0,
+          1211.0,
+          914.0,
+          1238.0
+        ]
+      },
+      {
+        "text": "Good to know",
+        "score": 0.9999933838844299,
+        "box": [
+          76.0,
+          1302.0,
+          247.0,
+          1339.0
+        ]
+      },
+      {
+        "text": "• All times are 5:00 PM Pakistan Standard Time (PKT), which is 12:00 noon UTC — the same slot every day.",
+        "score": 0.9888116121292114,
+        "box": [
+          77.0,
+          1347.0,
+          1086.0,
+          1395.0
+        ]
+      },
+      {
+        "text": "• Only working days are used. Saturdays and Sundays are skipped.",
+        "score": 0.9859695434570312,
+        "box": [
+          79.0,
+          1379.0,
+          695.0,
+          1421.0
+        ]
+      },
+      {
+        "text": "• Publishing is automatic. If a day is missed for any reason, the next run catches up.",
+        "score": 0.9931811094284058,
+        "box": [
+          79.0,
+          1409.0,
+          847.0,
+          1457.0
+        ]
+      },
+      {
+        "text": "• Each article appears at its own web address (shown above) and on the Resources page at",
+        "score": 0.9906387329101562,
+        "box": [
+          77.0,
+          1437.0,
+          932.0,
+          1495.0
+        ]
+      },
+      {
+        "text": "rocketmsl.com/resources.",
+        "score": 0.9998965263366699,
+        "box": [
+          74.0,
+          1469.0,
+          310.0,
+          1505.0
+        ]
+      },
+      {
+        "text": "Prepared 23 September 2026 · rocketmsl.com",
+        "score": 0.9806523323059082,
+        "box": [
+          73.0,
+          1521.0,
+          431.0,
+          1560.0
+        ]
+      }
+    ]
+  }
+]
