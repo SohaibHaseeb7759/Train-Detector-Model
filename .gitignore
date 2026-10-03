@@ -11,6 +11,7 @@ __pycache__/
 pending_samples/
 chatbot_result.jpg
 ocr_sample.png
+video_ocr_result.json
 
 # Pretrained base model (auto-downloads on first training run)
 yolo11n-seg.pt

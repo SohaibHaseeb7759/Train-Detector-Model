@@ -16,6 +16,7 @@ A Gradio web chatbot that:
 Run with the paddle_env Python:
     & ".\paddle_env\Scripts\python.exe" chatbot.py
 """
+import json
 import os
 import shutil
 import threading
@@ -286,38 +287,153 @@ def _count_user_samples():
                 if f.startswith("user_") or f.startswith("neg_")])
 
 
+VIDEO_JSON = "video_ocr_result.json"
+
+
+def ocr_video(video_path, frames_per_second, max_frames, progress=gr.Progress()):
+    """Run OCR on sampled frames of a video. Returns (json_dict, json_file_path)."""
+    if not video_path:
+        return {"error": "No video uploaded."}, None
+
+    cap = cv2.VideoCapture(video_path)
+    if not cap.isOpened():
+        return {"error": "Could not open the video file."}, None
+
+    video_fps = cap.get(cv2.CAP_PROP_FPS) or 30.0
+    total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT)) or 0
+    # How many source frames to skip between samples.
+    step = max(1, int(round(video_fps / max(0.1, float(frames_per_second)))))
+
+    detections = []
+    unique_texts = {}          # text -> best confidence seen
+    frame_idx = 0
+    sampled = 0
+    truncated = False
+
+    progress(0, desc="Scanning video…")
+    while True:
+        ret, frame = cap.read()
+        if not ret:
+            break
+        if frame_idx % step == 0:
+            if sampled >= int(max_frames):
+                truncated = True
+                break
+            try:
+                ocr_out = OCR_MODEL.predict(frame)   # PaddleOCR accepts a BGR numpy frame
+            except Exception as e:
+                ocr_out = []
+                print(f"[warn] OCR failed on frame {frame_idx}: {e}")
+
+            texts = []
+            for res in ocr_out:
+                for t, s in zip(res.get("rec_texts", []), res.get("rec_scores", [])):
+                    t = t.strip()
+                    if s >= 0.5 and t:
+                        conf = round(float(s), 4)
+                        texts.append({"text": t, "confidence": conf})
+                        if conf > unique_texts.get(t, 0):
+                            unique_texts[t] = conf
+
+            if texts:
+                detections.append({
+                    "frame": frame_idx,
+                    "timestamp_sec": round(frame_idx / video_fps, 2),
+                    "texts": texts,
+                })
+            sampled += 1
+            if total_frames:
+                progress(min(frame_idx / total_frames, 1.0),
+                         desc=f"Scanned {sampled} frame(s)…")
+        frame_idx += 1
+    cap.release()
+
+    result = {
+        "video": os.path.basename(video_path),
+        "video_fps": round(video_fps, 2),
+        "total_frames": total_frames,
+        "sampled_every_n_frames": step,
+        "frames_sampled": sampled,
+        "frames_with_text": len(detections),
+        "unique_texts": [
+            {"text": t, "confidence": c}
+            for t, c in sorted(unique_texts.items(), key=lambda kv: -kv[1])
+        ],
+        "detections": detections,
+    }
+    if truncated:
+        result["note"] = (f"Stopped after the {int(max_frames)}-frame limit. "
+                          "Increase 'Max frames' to scan more.")
+
+    with open(VIDEO_JSON, "w", encoding="utf-8") as f:
+        json.dump(result, f, indent=2, ensure_ascii=False)
+
+    return result, VIDEO_JSON
+
+
 # ---------------------------------------------------------------------------
 # UI
 # ---------------------------------------------------------------------------
 with gr.Blocks(title="Train Detection Chatbot") as demo:
     gr.Markdown("# 🚆 Train Detection Chatbot\n"
-                "I detect trains with your YOLO model, read text with PaddleOCR, "
-                "and learn from images you confirm.")
+                "Detect trains with YOLO, read text with PaddleOCR, and scan videos for text.")
 
-    state = gr.State({"stage": "ask_name", "name": None, "pending": None, "new_samples": 0})
+    with gr.Tabs():
+        # ---- Tab 1: the image chatbot ----------------------------------
+        with gr.Tab("💬 Chatbot (image)"):
+            state = gr.State({"stage": "ask_name", "name": None,
+                              "pending": None, "new_samples": 0})
+            with gr.Row():
+                with gr.Column(scale=3):
+                    chatbot = gr.Chatbot(
+                        height=480,
+                        value=[{"role": "assistant",
+                                "content": "Hello! 👋 I'm your train-detection assistant. "
+                                           "What's your name?"}],
+                    )
+                    msg = gr.MultimodalTextbox(
+                        placeholder="Type here… (attach an image with the 📎 clip)",
+                        file_types=["image"],
+                        show_label=False,
+                    )
+                with gr.Column(scale=2):
+                    result_view = gr.Image(label="Detection result", height=360)
+                    retrain_btn = gr.Button("🔁 Retrain now (learn from confirmed images)")
+                    status_md = gr.Markdown("⚪ Idle.")
+                    refresh_btn = gr.Button("🔄 Check training status", size="sm")
 
-    with gr.Row():
-        with gr.Column(scale=3):
-            chatbot = gr.Chatbot(
-                height=480,
-                value=[{"role": "assistant",
-                        "content": "Hello! 👋 I'm your train-detection assistant. "
-                                   "What's your name?"}],
+            msg.submit(chat_fn, [msg, chatbot, state],
+                       [msg, chatbot, state, result_view])
+            retrain_btn.click(retrain_now, [state], [status_md])
+            refresh_btn.click(check_status, None, [status_md])
+
+        # ---- Tab 2: video OCR -> JSON ----------------------------------
+        with gr.Tab("🎞️ Video OCR → JSON"):
+            gr.Markdown("Upload a video. I'll scan its frames with PaddleOCR and "
+                        "return every piece of text I find as JSON.")
+            with gr.Row():
+                with gr.Column(scale=2):
+                    video_in = gr.Video(label="Upload a video")
+                    fps_slider = gr.Slider(
+                        0.5, 5, value=1, step=0.5,
+                        label="Frames per second to scan",
+                        info="Higher = more thorough but slower (CPU).",
+                    )
+                    maxframes_slider = gr.Slider(
+                        10, 500, value=150, step=10,
+                        label="Max frames to scan",
+                        info="Safety cap so long videos don't run forever.",
+                    )
+                    run_video_btn = gr.Button("🔍 Scan video for text", variant="primary")
+                with gr.Column(scale=3):
+                    video_json = gr.JSON(label="OCR result")
+                    video_file = gr.File(label="Download JSON")
+
+            run_video_btn.click(
+                ocr_video,
+                [video_in, fps_slider, maxframes_slider],
+                [video_json, video_file],
             )
-            msg = gr.MultimodalTextbox(
-                placeholder="Type here… (attach an image with the 📎 clip)",
-                file_types=["image"],
-                show_label=False,
-            )
-        with gr.Column(scale=2):
-            result_view = gr.Image(label="Detection result", height=360)
-            retrain_btn = gr.Button("🔁 Retrain now (learn from confirmed images)")
-            status_md = gr.Markdown("⚪ Idle.")
-            refresh_btn = gr.Button("🔄 Check training status", size="sm")
-
-    msg.submit(chat_fn, [msg, chatbot, state], [msg, chatbot, state, result_view])
-    retrain_btn.click(retrain_now, [state], [status_md])
-    refresh_btn.click(check_status, None, [status_md])
 
 
 if __name__ == "__main__":
